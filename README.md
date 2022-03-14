@@ -15,7 +15,7 @@ https://drive.google.com/drive/folders/1vf0iN8-kS_1LdrGDO6Ejq7VZlxcJ5arV?usp=sha
 
 Ensure docker is installed and run
 ```
-docker build -t residential-instance-segmentation .
+docker build .
 ```
 
 After docker is built, start docker environment using:
