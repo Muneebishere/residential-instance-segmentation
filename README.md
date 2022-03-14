@@ -6,35 +6,39 @@ This repository contains the details of implementation of the Baseline submissio
 
 # Installation
 ```
-git clone https://github.com/crowdai/crowdai-mapping-challenge-mask-rcnn
-cd crowdai-mapping-challenge-mask-rcnn
-# Please ensure that you use python3.6
-pip install -r requirements.txt
-python setup.py install
+git clone https://github.com/Muneebishere/residential-instance-segmentation.git
+cd residential-instance-segmentation
+```
+
+Download and move contents to data folder contents from the drive
+https://drive.google.com/drive/folders/1vf0iN8-kS_1LdrGDO6Ejq7VZlxcJ5arV?usp=sharing
+
+Ensure docker is installed and run
+```
+docker build -t residential-instance-segmentation .
+```
+
+After docker is built, start docker environment using:
+```
+docker run -it -p 8888:8888 -p 6006:6006 -v /path-to-current-directory:/data lippoldt331/maskr-cnn bash
+
+```
+
+Change directory to data folder and run notebook
+```
+jupyter notebook --allow-root
 ```
 
 # Notebooks
 Please follow the instructions on the relevant notebooks for the training, prediction and submissions.
 
 * [Training](Training.ipynb)
-* [Prediction and Submission](Prediction-and-Submission.ipynb)
-  (_pre-trained weights for baseline submission included_)
+* [Prediction and Submission](Testing.ipynb)
 
 # Results
 ![sample_predictions](images/predictions.png)
 
-# Citation
-```
-@misc{crowdAIMappingChallengeBaseline2018,
-  author = {Mohanty, Sharada Prasanna},
-  title = {CrowdAI Mapping Challenge 2018 : Baseline with Mask RCNN},
-  year = {2018},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/crowdai/crowdai-mapping-challenge-mask-rcnn}},
-  commit = {bac1cf19adbc9d078122c6933da6f808c4ee590d}
-}
-```
+
 # Acknowledgements
 This repository heavily reuses code from the amazing [tensorflow Mask RCNN implementation](https://github.com/matterport/Mask_RCNN) by [@waleedka](https://github.com/waleedka/).
 Many thanks to all the contributors of that project.
